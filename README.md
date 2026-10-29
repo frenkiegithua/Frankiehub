@@ -39,3 +39,16 @@ python manage.py test
 ## Status
 
 Sprint 1: project foundation and homepage.
+
+## First-time setup (after cloning)
+
+1. Copy `.env.example` to `.env` and fill in `SECRET_KEY`. Set `DEBUG=True` for local work.
+2. Run `python manage.py migrate`.
+3. Run `python manage.py createsuperuser` and choose a strong password.
+4. Run `python manage.py runserver` and log in at `/admin/`.
+
+## Security notes
+
+- `ALLOWED_HOSTS` is read from `.env` as a comma-separated list.
+- When `DEBUG` is False, secure cookies and the HTTPS redirect are enabled automatically.
+- `SECURE_HSTS_SECONDS` (check W004) is deliberately not set yet. Set it only once a real HTTPS host exists, starting with a small value.
