@@ -17,5 +17,5 @@ class HomePageTests(TestCase):
         self.assertContains(response, "Frankiehub")
 
     def test_home_page_links_stylesheet(self):
-    response = self.client.get("/")
-    self.assertContains(response, "/static/style.css")
+        response = self.client.get("/")
+        self.assertContains(response, "/static/style.css")
