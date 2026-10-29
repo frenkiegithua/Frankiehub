@@ -11,9 +11,10 @@
     <header>
         <div class="container">
             <a href="{% url 'home' %}">Frankiehub</a>
-            <nav>
-                <a href="{% url 'home' %}">Home</a>
+            <nav aria-label="Main">
+                <a href="{% url 'home' %}"{% if request.path == '/' %} aria-current="page"{% endif %}>Home</a>
             </nav>
+       
         </div>
     </header>
 

@@ -19,3 +19,8 @@ class HomePageTests(TestCase):
     def test_home_page_links_stylesheet(self):
         response = self.client.get("/")
         self.assertContains(response, "/static/style.css")
+
+    def test_home_page_has_accessible_nav(self):
+        response = self.client.get("/")
+        self.assertContains(response, 'aria-label="Main"')
+        self.assertContains(response, 'aria-current="page"')
