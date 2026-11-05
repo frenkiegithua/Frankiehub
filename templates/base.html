@@ -13,8 +13,8 @@
             <a href="{% url 'home' %}">Frankiehub</a>
             <nav aria-label="Main">
                 <a href="{% url 'home' %}"{% if request.path == '/' %} aria-current="page"{% endif %}>Home</a>
+                <a href="{% url 'blog:article_list' %}"{% if request.path == '/blog/' %} aria-current="page"{% endif %}>Blog</a>
             </nav>
-       
         </div>
     </header>
 

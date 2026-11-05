@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Blog | Frankiehub{% endblock %}
+
+{% block content %}
+<h1>Blog</h1>
+
+{% for article in articles %}
+<article>
+    <h2>{{ article.title }}</h2>
+    <p><time datetime="{{ article.created|date:'Y-m-d' }}">{{ article.created|date:"j F Y" }}</time></p>
+    <p>{{ article.body|truncatewords:40 }}</p>
+</article>
+{% empty %}
+<p>No articles yet.</p>
+{% endfor %}
+{% endblock %}
