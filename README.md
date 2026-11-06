@@ -38,7 +38,8 @@ python manage.py test
 
 ## Status
 
-Sprint 1: project foundation and homepage.
+- Sprints 1-2: project foundation and homepage.
+- Sprint 3: blog (Article model, admin management, public list page at `/blog/`).
 
 ## First-time setup (after cloning)
 
@@ -46,6 +47,22 @@ Sprint 1: project foundation and homepage.
 2. Run `python manage.py migrate`.
 3. Run `python manage.py createsuperuser` and choose a strong password.
 4. Run `python manage.py runserver` and log in at `/admin/`.
+
+## Blog
+
+Articles are managed in Django Admin and shown to visitors at `/blog/`.
+
+To publish an article:
+
+1. Run the server and log in at `/admin/`.
+2. Open **Blog > Articles** and click **Add article**.
+3. Enter a title. The slug fills in automatically; you can edit it. It must be
+   unique and is used in the article's URL.
+4. Write the body and set **Status** to **Published**, then save.
+5. Open `/blog/`. Published articles appear newest first.
+
+Articles with status **Draft** are saved but never shown on the public site.
+New articles default to Draft.
 
 ## Security notes
 
