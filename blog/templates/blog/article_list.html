@@ -4,11 +4,12 @@
 
 {% block content %}
 <h1>Blog</h1>
+<p class="muted">{{ articles|length }} article{{ articles|length|pluralize }}</p>
 
 {% for article in articles %}
-<article>
+<article class="card">
     <h2>{{ article.title }}</h2>
-    <p><time datetime="{{ article.created|date:'Y-m-d' }}">{{ article.created|date:"j F Y" }}</time></p>
+    <p class="meta"><time datetime="{{ article.created|date:'Y-m-d' }}">{{ article.created|date:"j F Y" }}</time></p>
     <p>{{ article.body|truncatewords:40 }}</p>
 </article>
 {% empty %}

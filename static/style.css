@@ -1,11 +1,13 @@
 /* Frankiehub base styles: readable, fast, no frills */
 
 :root {
-  --text: #1a1a1a;
-  --bg: #ffffff;
-  --muted: #555555;
-  --link: #0b5cad;
-  --border: #dddddd;
+  color-scheme: dark;
+  --bg: #0f1117;
+  --surface: #171a22;
+  --text: #e6e8ee;
+  --muted: #9aa3b2;
+  --link: #6ea8fe;
+  --border: #2a2f3a;
 }
 
 body {
@@ -26,6 +28,12 @@ a {
   color: var(--link);
 }
 
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 header {
   border-bottom: 1px solid var(--border);
   padding: 1rem 0;
@@ -39,6 +47,31 @@ header .container {
   gap: 0.5rem 1.5rem;
 }
 
+header .container > a {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 2px solid var(--link);
+}
 
 main {
   padding: 1.5rem 0;
@@ -55,8 +88,31 @@ footer p {
   font-size: 0.9rem;
 }
 
-nav a[aria-current="page"] {
-  color: var(--text);
-  font-weight: 600;
-  text-decoration: none;
+/* Blog list */
+
+.muted {
+  color: var(--muted);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.card .meta {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
 }
